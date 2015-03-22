@@ -1,0 +1,76 @@
+body {
+    background-color: brown;      
+}
+   
+#zaglavlje {   
+   color: white;
+   background-color: silver;
+   text-indent: 2%;      
+}
+
+#zaglavlje h1 {
+    font-family: 'PT Sans', sans-serif; 
+    font-size: 78px;   
+    color: white;    
+    text-align: center;
+    vertical-align: central;  
+}
+
+#zaglavlje img {
+    float: left;
+    width: 150px;
+    height: 176px;
+}
+
+
+#meni {
+    background-color: rgb(100,10,50);        
+    margin: 0;
+    color: white;
+}
+
+#meni a:hover {
+    text-decoration: underline;
+}
+
+#meni li {
+    display: inline;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#meni a {
+    color: white;
+    text-decoration: none;
+}
+#meni ul {
+    list-style: none;
+    font-size: 20px;
+    text-align: right;    
+    padding-bottom: 10px;
+}
+
+
+#glavni{
+    padding-left: 5px;
+    padding-bottom: 10px; 
+}
+
+#glavni td {
+    padding-left: 7px;
+    padding-right: 7px;
+}
+
+#okvir {
+    background-color: #99c;
+    width: 800px;
+    margin-right: auto;
+    margin-left: auto;     
+}
+
+#podnozje {
+    background-color: #cc9;    
+    width: 740px;    
+    padding-left: 10px;
+    clear: both;    
+}
