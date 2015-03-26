@@ -1,10 +1,30 @@
 body {
-    background-color: white;
+    font-family: 'Tangerine', serif;
 }
 
-#zaglavlje {
-    color: white;
+#okvir {
     background-color: white;
+    width: 1000px;
+    margin-right: auto;
+    margin-left: auto;        
+}
+
+#naslov h1 {    
+    font-size: 128px;
+    color: white;
+    text-align: center;
+    vertical-align: central;
+    color: rgb(100,10,50);
+}
+
+#naslov h4 {    
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    color: rgb(100,10,50);
+}
+
+#zaglavlje {    
     text-indent: 2%;
     border: 1px solid;
     border-radius: 5px;
@@ -14,10 +34,10 @@ body {
 
 #zaglavlje img {
     float: left;
-    width: 200px;
+    width: 250px;
     height: 241px;
-    border: 2px solid;
-    border-radius: 10px;
+    border: 1px solid;
+    border-radius: 5px;
 }
 
 #zaglavlje h1, h4 {
@@ -25,7 +45,7 @@ body {
     width: 74%;
     margin: auto;
     padding-top: 10px;
-    padding-bottom: 10px;    
+    padding-bottom: 10px;
 }
 
 #meni {
@@ -44,12 +64,11 @@ body {
     padding-right: 10px;
     border: 1px solid;
     border-radius: 5px;
-    
 }
 
 #meni a {
     color: white;
-    text-decoration: none;    
+    text-decoration: none;
 }
 
 #meni ul {
@@ -58,124 +77,205 @@ body {
     text-align: right;
     padding-bottom: 10px;
     padding-top: 10px;
-    margin: auto;  
-    padding-right: 10px;      
+    margin: auto;
+    padding-right: 10px;
 }
 
 #meni {
     border-radius: 5px;
 }
 
-#glavni {
-    padding-left: 5px;
+#glavni {    
     padding-bottom: 10px;
 }
 
-#glavni td {
-    padding-left: 7px;
-    padding-right: 7px;    
+#ponuda {    
+  padding-bottom: 10px; 
+  width: 1000px;  
 }
 
-#element {
-     border: 1px solid;
-     border-radius: 5px;  
-     padding-right: 5px;
-     padding-left: 5px;
-     border-bottom-color: rgb(100,10,50);      
+
+.element {    
+    border: 3px solid;
+    border-radius: 5px;    
+    border-color: rgb(100,10,50); 
+    width: 317px;
+    margin: 5px;
+    float: left;             
 }
 
-#element h2 {    
+.element h2 {
     width: 30%;
     color: white;
     border: 1px solid;
-    border-radius: 5px;  
-    
+    border-radius: 5px;    
 }
 
-#element a {
-    color: white;
-    border: 1px solid;
-    border-radius: 5px; 
-    background-color: rgb(100,10,50);   
-    text-decoration: none; 
-        
-}
 
-#element a:hover {
+.element a:hover {
     text-decoration: underline;
 }
 
-#okvir {
-    background-color: white;
-    width: 800px;
-    margin-right: auto;
-    margin-left: auto;
-    border: 0.5px solid;
-    border-radius: 10px;
-}
-
-#podnozje {
-    background-color: blue;
-    width: 740px;
-    padding-left: 10px;
-    clear: both;
-}
-
-#naslov h1{
-    font-family: Cambria, sans-serif;
-    font-size: 78px;
+.slika {      
     color: white;
-    text-align: center;
-    vertical-align: central;        
-    color: rgb(100,10,50);    
+    border: 1px solid;
+    border-radius: 5px;
+    background-color: rgb(100,10,50);
+    text-decoration: none;
+    padding: 15px;
 }
-#naslov h4{
-    font-family: Cambria, sans-serif;
+
+
+#spisakArtikala{
+    border: 3px solid rgb(100,10,50);               
+}
+
+#spisakArtikala li {
+    display: inline;
+    text-align: center;    
+}
+
+#spisakArtikala ul {
+    text-align: center;
+    padding-left: 0px;    
+}
+
+#spisakArtikala a {
+    text-decoration: none;
     font-size: 20px;
     color: white;
-    text-align: center;      
-    color: rgb(100,10,50);    
+    background-color: rgb(100,10,50);  
+    padding: 10px;  
 }
 
-#ponudaElement {
-    margin: auto; 
-    width: 800px; 
-    display: inline;  
-    
+#spisakArtikala a:hover {
+    text-decoration: underline;
 }
 
-
-#ponudaElement table {    
-    border: 3px solid;
-    border-radius: 15px;
-    border-color: RGB(100,50,50);       
-    width: 100%;   
-    margin: auto;    
-}
-
-#ponudaElement img {
-    width: 150px;
-    height: 150px;
-}
-
-.slika {
-    width: 30%;
-}
-
-.slika h3 {
+#partneri {
+    padding-top: 10px;    
     background-color: rgb(100,10,50);
+    width: 1000px;
+    float: left;
+    border-radius: 5px;    
+}
+
+
+#partneri img {
+    float: left;
+    width: 230px;
+    height: 100px;
+    padding: 10px;
+}
+
+#partneri h3 {
+    color: white;
     text-align: center;
-    color: white;  
-    border-radius: 15px;  
+    font-size: 30px;
 }
 
-.slila a {
-    text-decoration: none;
+
+/*CSS za stolice, fotelje....*/
+
+#sviElementi {
+   width: 1000px;   
 }
 
-.opis {
-    float: right;
-    width: 60%;
-    line-height: 60%;
-    text-align: justify;
+.ponudaElement{    
+    height: 300px;
+    border: 4px solid rgb(100,10,50); 
+    border-radius: 10px;   
+    margin: 10px;    
+}
+
+.vrstaElementa img {
+    height: 220px;
+    width: 250px;
+}
+
+.vrstaElementa h3 {
+    text-align: center;
+    background-color: rgb(100,10,50);
+    font-size: 20px;
+    padding: 5px;
+    color: white;
+}
+
+.vrstaElementa {
+    float: left;
+    height: 290px;
+    width: 300px;
+}
+
+.opisElementa {
+    float: right;      
+    height: 250px; 
+    width: 630px;
+}
+
+.cijena {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+/*CSS za kontakt.html*/
+
+#kontakt {
+    width: 1000px;   
+    border: 1px solid rgb(100,10,50);
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding-top: 10px;   
+    font-size: 20px; 
+}
+
+#kontakt table {
+   margin-left: 50px;
+   margin-right: 50px;
+}
+
+.tekstPoruka {
+    margin-top: 10px;    
+}
+
+#kontakt td {
+    padding: 10px;            
+}
+
+.podaci {
+    height: 30px;
+    font-size: 20px;
+    width: 500px;
+}
+
+
+
+.poruka {
+    height: 400px;
+    width: 880px;
+    margin-left: 60px; 
+    font-size: 20px;   
+}
+
+.button {    
+    height: 3em;
+    width: 7em;
+    margin-top: 30px;
+    margin-left: 800px;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+
+/*CSS za O nama*/
+
+#onama {
+    margin: auto;
+    border: 1px solid rgb(100,10,50);
+}
+
+#onama p {
+    margin-left: 40px;
+    margin-right: 40px; 
+    font-size: 25px;
 }
