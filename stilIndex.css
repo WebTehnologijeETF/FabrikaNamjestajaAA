@@ -1,15 +1,23 @@
 body {
     font-family: 'Tangerine', serif;
+    background-image: url("pozadina.png");
+}
+
+
+#desnoZaglavlje {
+    float: right;
+    width: 700px;
 }
 
 #okvir {
     background-color: white;
     width: 1000px;
     margin-right: auto;
-    margin-left: auto;        
+    margin-left: auto;
+    overflow: hidden;
 }
 
-#naslov h1 {    
+#naslov h1 {
     font-size: 128px;
     color: white;
     text-align: center;
@@ -17,14 +25,14 @@ body {
     color: rgb(100,10,50);
 }
 
-#naslov h4 {    
+#naslov h4 {
     font-size: 20px;
     color: white;
     text-align: center;
     color: rgb(100,10,50);
 }
 
-#zaglavlje {    
+#zaglavlje {
     text-indent: 2%;
     border: 1px solid;
     border-radius: 5px;
@@ -33,11 +41,14 @@ body {
 }
 
 #zaglavlje img {
+    margin-top: 5px;
+    padding-bottom: 25px;
     float: left;
-    width: 250px;
+    width: 280px;
     height: 241px;
     border: 1px solid;
     border-radius: 5px;
+    margin-left: 10px;
 }
 
 #zaglavlje h1, h4 {
@@ -46,6 +57,9 @@ body {
     margin: auto;
     padding-top: 10px;
     padding-bottom: 10px;
+    border-radius: 10px;
+    border: 1px solid rgb(100,10,50);
+    border-right: none;
 }
 
 #meni {
@@ -85,67 +99,68 @@ body {
     border-radius: 5px;
 }
 
-#glavni {    
+#glavni {
     padding-bottom: 10px;
 }
 
-#ponuda {    
-  padding-bottom: 10px; 
-  width: 1000px;  
+.ponuda {
+    float: left;
 }
 
 
-.element {    
+.element {
     border: 3px solid;
-    border-radius: 5px;    
-    border-color: rgb(100,10,50); 
-    width: 317px;
-    margin: 5px;
-    float: left;             
+    border-radius: 5px;
+    border-color: rgb(100,10,50);
+    width: 325px;
+    height: 335px;
+    float: left;
+    margin: auto;
+    padding: 1px;
 }
 
 .element h2 {
-    width: 30%;
-    color: white;
-    border: 1px solid;
-    border-radius: 5px;    
+    width: 317px;    
+    color: rgb(100,10,50);
+    text-align: center;
 }
 
+.element img {
+    width: 317px;
+    height: 260px;
+    padding-left: 5px;
+}
+
+.element a {
+    text-decoration: none;
+}
 
 .element a:hover {
     text-decoration: underline;
 }
 
-.slika {      
-    color: white;
-    border: 1px solid;
-    border-radius: 5px;
+
+#spisakArtikala {
     background-color: rgb(100,10,50);
-    text-decoration: none;
-    padding: 15px;
-}
-
-
-#spisakArtikala{
-    border: 3px solid rgb(100,10,50);               
+    color: white;
 }
 
 #spisakArtikala li {
     display: inline;
-    text-align: center;    
+    text-align: center;
+    padding: 10px;
 }
 
 #spisakArtikala ul {
     text-align: center;
-    padding-left: 0px;    
+    padding-left: 0px;
+    margin-bottom: 5px;
 }
 
 #spisakArtikala a {
     text-decoration: none;
-    font-size: 20px;
+    font-size: 30px;
     color: white;
-    background-color: rgb(100,10,50);  
-    padding: 10px;  
 }
 
 #spisakArtikala a:hover {
@@ -153,11 +168,11 @@ body {
 }
 
 #partneri {
-    padding-top: 10px;    
+    padding-top: 10px;
     background-color: rgb(100,10,50);
     width: 1000px;
     float: left;
-    border-radius: 5px;    
+    margin: auto;
 }
 
 
@@ -174,18 +189,40 @@ body {
     font-size: 30px;
 }
 
+#dno {      
+    float: left;
+    width: 1000px;
+    background-color: rgb(100,10,50);   
+    border-top: 2px solid white;
+}
+
+
+.informacije p {
+    padding-left: 30px;
+    float: left;
+    margin: 0px;
+    margin-top: 10px;
+}
+
+.faris {
+    background-color: rgb(100,10,50);
+    color: white;
+    float: right;
+    margin: auto;
+    margin-top:10px;    
+}
 
 /*CSS za stolice, fotelje....*/
 
 #sviElementi {
-   width: 1000px;   
+    width: 1000px;
 }
 
-.ponudaElement{    
+.ponudaElement {
     height: 300px;
-    border: 4px solid rgb(100,10,50); 
-    border-radius: 10px;   
-    margin: 10px;    
+    border: 4px solid rgb(100,10,50);
+    border-radius: 10px;
+    margin: 10px;
 }
 
 .vrstaElementa img {
@@ -208,38 +245,59 @@ body {
 }
 
 .opisElementa {
-    float: right;      
-    height: 250px; 
+    float: right;
+    height: 250px;
     width: 630px;
 }
 
-.cijena {
+p.cijena {
     font-size: 30px;
-    margin-bottom: 20px;
+    margin-bottom: 20px;  
+    height: 35px;   
+    float: left;
+    margin-top: -20px;             
+}
+
+a.cijena {
+    font-size: 25px;
+    float: right;
+    margin-right: 20px;
+    background-color: rgb(100,10,50);
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+a.cijena:hover {
+    border-radius: 25px;
 }
 
 /*CSS za kontakt.html*/
 
 #kontakt {
-    width: 1000px;   
+    width: 1000px;
     border: 1px solid rgb(100,10,50);
     border-radius: 5px;
     margin-bottom: 10px;
-    padding-top: 10px;   
-    font-size: 20px; 
+    padding-top: 10px;
+    font-size: 20px;
+    margin-top: 10px;
 }
 
 #kontakt table {
-   margin-left: 50px;
-   margin-right: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+    border: 0px;
 }
 
 .tekstPoruka {
-    margin-top: 10px;    
+    margin-top: 10px;
 }
 
 #kontakt td {
-    padding: 10px;            
+    padding: 10px;
+    text-align: right;
+    border: 0px;
 }
 
 .podaci {
@@ -248,19 +306,23 @@ body {
     width: 500px;
 }
 
+#kontakt h3 {
+    color: rgb(100,10,50);
+    text-align: center;
+}
 
 
 .poruka {
     height: 400px;
     width: 880px;
-    margin-left: 60px; 
-    font-size: 20px;   
+    margin-left: 60px;
+    font-size: 20px;
 }
 
-.button {    
+.button {
     height: 3em;
     width: 7em;
-    margin-top: 30px;
+    margin-top: 10px;
     margin-left: 800px;
     font-size: 20px;
     margin-bottom: 10px;
@@ -269,13 +331,45 @@ body {
 
 /*CSS za O nama*/
 
-#onama {
-    margin: auto;
+#onama {    
+    margin-top: 20px;
     border: 1px solid rgb(100,10,50);
+    margin-bottom: 10px;
 }
 
 #onama p {
     margin-left: 40px;
-    margin-right: 40px; 
+    margin-right: 40px;
     font-size: 25px;
+    text-align: justify;
+}
+
+#onama h2 {
+    text-align: center;
+}
+
+
+/*css za ponudu*/
+
+#ponuda {
+    padding-bottom: 20px;
+}
+
+#ponuda table, tr, th, td {
+    border: 2px solid rgb(100,10,50);
+    margin: auto;
+    font-size: 30px; 
+    padding: 10px;   
+}
+
+#ponuda img {
+    width: 100px;
+    height: 100px;
+}
+
+#ponuda h1 {
+    padding: 10px;
+    background-color: rgb(100,10,50);
+    text-align: center;
+    color: white;    
 }
