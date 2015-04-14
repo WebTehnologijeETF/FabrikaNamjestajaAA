@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Zaglavlje</title>
+    </head>
+    <body>
+        <div id="originalZaglavlje">
+            <script>
+                function prikaziMeni() {
+                    var el = document.getElementById("padajuciMeni");
+                    el.style.visibility = 'visible';
+                
+                }
+                
+                function sakrijMeni() {
+                    var el = document.getElementById("padajuciMeni");
+                    el.style.visibility = 'hidden';
+                }
+                
+            </script>
+
+            <div id="meni">
+
+                <ul>
+                    <li><a href="index.html">Početna</a></li>
+                    <li onmouseover="prikaziMeni()" onmouseout="sakrijMeni()"><a href="ponuda.html">Ponuda</a>
+                        <div id="padajuciMeni" onmouseout="sakrijMeni()">
+                            <ul>
+                                <li><a href="stolice.html">Stolice</a></li>
+                                <li><a href="fotelje.html">Fotelje</a></li>
+                                <li><a href="Dvosjedi.html">Dvosjedi</a></li>
+                                <li><a href="trosjedi.html">Trosjedi</a></li>
+                                <li><a href="Stolovi.html">Stolovi</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="onama.html">O nama</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </div>
+            <a href="index.html"><img src="logo.png" alt="logo.png"></a>
+            <div id="naslov">
+
+                <h4>Proizvodnja i prodaja raznih vrsta kućnog namještaja</h4>
+                <a href="index.html">
+                    <h1>Agović</h1>
+                </a>
+            </div>
+        </div>
+    </body>
+</html>

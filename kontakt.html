@@ -3,79 +3,48 @@
     <head>
         <meta charset="utf-8">
         <title>Kontakt Agović</title>
-        <link rel="stylesheet" type="text/css" href="stilIndex.css">        
+        <link rel="stylesheet" type="text/css" href="stilIndex.css">
+        <script src="validacionaSkripta.js"></script>
+        <script src="jquery-2.1.3.js"></script>
     </head>
     <body>
         <div id="okvir">
+
             <div id="zaglavlje">
-                <a href="index.html"><img src="logo.png" alt="logo.png"></a>
-                <div id="desnoZaglavlje">
-                    <div id="meni">
-                        <ul>
-                            <li><a href="index.html">Početna</a></li>
-                            <li><a href="ponuda.html">Ponuda</a></li>
-                            <li><a href="onama.html">O nama</a></li>
-                            <li><a href="kontakt.html">Kontakt</a></li>
-                        </ul>
-                    </div>
-                    <div id="naslov">
-                        <h4>Proizvodnja i prodaja raznih vrsta kućnog namještaja</h4>
-                        <h1>Agović</h1>
-                    </div>
-                </div>
+                <script> $("#zaglavlje").load("zaglavlje.html #originalZaglavlje"); </script>
             </div>
+
             <div id="kontakt">
                 <h3>Kontaktirajte nas slanjem poruke, a mi ćemo vam odgovoriti na mail</h3>
-                <form action="#" name="kontakt">
+                <p>(Polja sa * su obavezna!)</p>
+                 <p class="porukaOGresci">Slanje nije moguće. Neke kontakt informacije niste unijeli ili nisu korektne!</p>
+                <form action="#" id="kontaktForma" name="kontaktForma"  onsubmit="return provjeraPredSlanje()">
                     <table>
                         <tr>
-                            <td>Ime i prezime:</td>
-                            <td><input class="podaci" name="ime"></td>
+                            <td>*Ime i prezime:</td>
+                            <td><input class="podaci" id="ime" name="ime" onblur="provjeri(this)"></td>
+                            <td><img id="greskaIme" src="Slike/x.png" alt="X" title="Morate unijeti ime i prezime!" > </td>
                         </tr>
                         <tr>
-                            <td>E mail:</td>
-                            <td><input class="podaci" name="mail"></td>
+                            <td>*E mail:</td>
+                            <td><input class="podaci" id="mail" name="mail" onblur="provjeri(this)"></td>
+                            <td><img id="greskaMail" src="Slike/x.png" alt="X" title="Morate unijeti svoju E-Mail adresu!"></td>
                         </tr>
                         <tr>
                             <td>Naslov:</td>
-                            <td><input class="podaci" name="naslov"></td>
-                        </tr>
-                        <tr>
-                            <td class="tekstPoruka">Poruka:</td>
+                            <td><input class="podaci" id="naslov" name="naslov"></td>
                         </tr>
                     </table>
-
-                    <textarea class="poruka" name="poruka"></textarea>
+                    <h4 class="tekstPoruka">*Poruka:</h4>
+                    <textarea id="poruka" name="poruka"></textarea>
+                   
                     <input class="button" type="submit" value="Pošalji">
                 </form>
             </div>
-            <div id="partneri">
-                <h3>Partneri</h3>
-                <a target="_blank" href="http://www.dallas.ba/dallas/index.php"><img src="Slike/partneri/dallas.png" alt="Dallass"></a>
-                <a target="_blank" href="http://http://www.maoles.com/"><img src="Slike/partneri/maoles.png" alt="Maoles"></a>
-                <a target="_blank" href="http://http://www.standard-furniture.ba/Naslovna"><img src="Slike/partneri/standard.png" alt="Standard-Furniture"></a>
-                <a target="_blank" href="http://http://www.sinkromo.co.ba/"><img src="Slike/partneri/sincromo.png" alt="Sincromo"></a>
-            </div>
-             <div id="dno">
-                <div class="informacije">
-                    <p><b>Adresa:</b> <br>
-                    Ferhatovića 18 <br>
-                    Visoko <br>
-                    Bosna i Hercegovina<br>
-                    </p>
-                    <p>
-                        <b>Telefon:</b> +387 63 883 329<br>
-
-                        <b>e-mail:</b> obrt.agovic@gmail.com<br>
-
-                        <b>web:</b> www.agovic.ba<br>
-                    </p>
-                </div>
-                <p class="faris">
-                    <b>Dizajn:</b> Džafić Faris, 2015 - <br>
-                    <b>Mail:</b> faris.dzafic@gmail.com <br>
-                    <b>Telefon:</b> +387 62 961 960 <br>
-                </p>
+             <div id="podnozje">
+                <script>
+                     $("#podnozje").load("podnozje.html #original");
+                </script>
             </div>
         </div>
     </body>

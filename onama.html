@@ -4,88 +4,54 @@
         <meta charset="utf-8">
         <title>O nama | Namještaj Agović</title>
         <link rel="stylesheet" type="text/css" href="stilIndex.css">
+        <script src="jquery-2.1.3.js"></script>
     </head>
-    <body>        
-            <div id="okvir">
-                <div id="zaglavlje">
-                    <a href="index.html"><img src="logo.png" alt="logo.png"></a>
-                    <div id="desnoZaglavlje">
-                    <div id="meni">
-                        <ul>
-                            <li><a href="index.html">Početna</a></li>
-                            <li><a href="ponuda.html">Ponuda</a></li>
-                            <li><a href="onama.html">O nama</a></li>
-                            <li><a href="kontakt.html">Kontakt</a></li>
-                        </ul>
-                    </div>
-                    <div id="naslov">
-                        <h4>Proizvodnja i prodaja raznih vrsta kućnog namještaja</h4>
-                        <h1>Agović</h1>
-                    </div>
-                    </div>
-                </div>
+    <body>
+        <div id="okvir">
+            <div id="zaglavlje">
+                <script>
+                    $("#zaglavlje").load("zaglavlje.html #originalZaglavlje");
+                </script>
+            </div>
 
-                <div id="onama">
-                    <h2>O nama</h2>
-                    <p>
+            <div id="onama">
+                <h2>O nama</h2>
+                <p>
                     Firma Agović je osnovana 2001. godine sa sjedištem u Visokom. Osnovna djelatnost je prodaja i distribucija namještaja.
                     Naša uža djelatnost je proizvodnja raznih modela  stolica i fotelja, izrađenih od najčešće zastupljenih vrsta drveta, hrasta i bukve.
-                    </p>
+                </p>
 
-                    <p>
+                <p>
                     Od osnivanja do danas, razvili smo mrežu pouzdanih poslovnih saradnika i zadovoljnih klijenata,
                     kojima smo pomogli da svoj životni prostor uljepšaju i upotpune namještajem iz našeg prodajnog asortimana.
-                    </p>
+                </p>
 
-                    <p>
+                <p>
                     Poslujemo sa kvalitetnim izborom namještaja i sa najbovoljnijim cijenama na području Bosne i Hercegovine, Crne Gore, Srbije i Hrvatske,
                     s ciljem daljeg širenja u regionu.
-                    </p>
-                    <p>
+                </p>
+                <p>
                     Ukoliko želite da nam se obratite sa Vašim pitanjima ili sugestijama za boljom suradnjom, molimo Vas da se javite na sljedeće adrese:<br>
-                        <br>
-                        <b>Adresa:</b> <br>
+                    <br>
+                    <b>Adresa:</b> <br>
                     Ferhatović1 18 <br>
                     Visoko <br>
                     Bosna i Hercegovina<br>
 
-                        <b>Telefon:</b> +387 63 883 329<br>
+                    <b>Telefon:</b> +387 63 883 329<br>
 
-                        <b>e-mail:</b> obrt.agovic@gmail.com<br>
+                    <b>e-mail:</b> obrt.agovic@gmail.com<br>
 
-                        <b>web:</b> www.agovic.ba<br>
-                    </p>
-                </div>
-
-                <div id="partneri">
-                    <h3>Partneri</h3>
-                    <a target="_blank" href="http://www.dallas.ba/dallas/index.php"><img src="Slike/partneri/dallas.png" alt="Dallass"></a>
-                    <a target="_blank" href="http://http://www.maoles.com/"><img src="Slike/partneri/maoles.png" alt="Maoles"></a>
-                    <a target="_blank" href="http://http://www.standard-furniture.ba/Naslovna"><img src="Slike/partneri/standard.png" alt="Standard-Furniture"></a>
-                    <a target="_blank" href="http://http://www.sinkromo.co.ba/"><img src="Slike/partneri/sincromo.png" alt="Sincromo"></a>
-                </div>
-                 <div id="dno">
-                <div class="informacije">
-                    <p><b>Adresa:</b> <br>
-                    Ferhatovića 18 <br>
-                    Visoko <br>
-                    Bosna i Hercegovina<br>
-                    </p>
-                    <p>
-                        <b>Telefon:</b> +387 63 883 329<br>
-
-                        <b>e-mail:</b> obrt.agovic@gmail.com<br>
-
-                        <b>web:</b> www.agovic.ba<br>
-                    </p>
-                </div>
-                <p class="faris">
-                    <b>Dizajn:</b> Džafić Faris, 2015 - <br>
-                    <b>Mail:</b> faris.dzafic@gmail.com <br>
-                    <b>Telefon:</b> +387 62 961 960 <br>
+                    <b>web:</b> www.agovic.ba<br>
                 </p>
             </div>
-            </div>        
+
+            <div id="podnozje">
+                <script>
+                    $("#podnozje").load("podnozje.html #original");
+                </script>
+            </div>
+        </div>
     </body>
 </html>
 
