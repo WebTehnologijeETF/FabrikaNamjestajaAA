@@ -3,35 +3,24 @@
     <head>
         <meta charset="utf-8">
         <title>Zaglavlje</title>
+                
     </head>
     <body>
         <div id="originalZaglavlje">
-            <script>
-                function prikaziMeni() {
-                    var el = document.getElementById("padajuciMeni");
-                    el.style.visibility = 'visible';
-                
-                }
-                
-                function sakrijMeni() {
-                    var el = document.getElementById("padajuciMeni");
-                    el.style.visibility = 'hidden';
-                }
-                
-            </script>
 
-            <div id="meni">
-
+            <div id="meni">              
                 <ul>
                     <li><a href="index.html">Početna</a></li>
-                    <li onmouseover="prikaziMeni()" onmouseout="sakrijMeni()"><a href="ponuda.html">Ponuda</a>
-                        <div id="padajuciMeni" onmouseout="sakrijMeni()">
+                    <li onmouseover="document.getElementById('padajuciMeni').style.visibility = 'visible';" 
+                        onmouseout="document.getElementById('padajuciMeni').style.visibility = 'hidden';">
+                        <a href="ponuda.html">Ponuda</a>
+                        <div id="padajuciMeni" onmouseout="document.getElementById('padajuciMeni').style.visibility = 'hidden';">
                             <ul>
                                 <li><a href="stolice.html">Stolice</a></li>
                                 <li><a href="fotelje.html">Fotelje</a></li>
                                 <li><a href="Dvosjedi.html">Dvosjedi</a></li>
                                 <li><a href="trosjedi.html">Trosjedi</a></li>
-                                <li><a href="Stolovi.html">Stolovi</a></li>
+                                <li><a href="stolovi.html">Stolovi</a></li>
                             </ul>
                         </div>
                     </li>
