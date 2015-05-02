@@ -1,54 +1,29 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Kontakt Agović</title>
-        <link rel="stylesheet" type="text/css" href="stilIndex.css">
-        <script src="validacionaSkripta.js"></script>
-        <script src="ucitaj.js"></script>
-    </head>
-    <body>
-        <div id="okvir">
+<div id="kontakt">
+    <h3>Kontaktirajte nas slanjem poruke, a mi ćemo vam odgovoriti na mail</h3>
+    <p>(Polja sa * su obavezna!)</p>
+    <p class="porukaOGresci">Slanje nije moguće. Neke kontakt informacije niste unijeli ili nisu korektne!</p>
+    <form action="#" id="kontaktForma" name="kontaktForma" onsubmit="return provjeraPredSlanje()">
+        <table>
+            <tr>
+                <td>*Ime i prezime:</td>
+                <td><input class="podaci" id="ime" name="ime" onblur="provjeri(this)"></td>
+                <td><img id="greskaIme" src="Slike/x.png" alt="X" title="Morate unijeti ime i prezime!">
+                </td>
+            </tr>
+            <tr>
+                <td>*E mail:</td>
+                <td><input class="podaci" id="mail" name="mail" onblur="provjeri(this)"></td>
+                <td><img id="greskaMail" src="Slike/x.png" alt="X" title="Morate unijeti svoju E-Mail adresu!"></td>
+            </tr>
+            <tr>
+                <td>Naslov:</td>
+                <td><input class="podaci" id="naslov" name="naslov"></td>
+            </tr>
+        </table>
+        <h4 class="tekstPoruka">*Poruka:</h4>
+        <textarea id="poruka" name="poruka"></textarea>
 
-            <div id="zaglavlje">
-                <script>ucitajZaglavlje(); </script>
-            </div>
-
-            <div id="kontakt">
-                <h3>Kontaktirajte nas slanjem poruke, a mi ćemo vam odgovoriti na mail</h3>
-                <p>(Polja sa * su obavezna!)</p>
-                 <p class="porukaOGresci">Slanje nije moguće. Neke kontakt informacije niste unijeli ili nisu korektne!</p>
-                <form action="#" id="kontaktForma" name="kontaktForma"  onsubmit="return provjeraPredSlanje()">
-                    <table>
-                        <tr>
-                            <td>*Ime i prezime:</td>
-                            <td><input class="podaci" id="ime" name="ime" onblur="provjeri(this)"></td>
-                            <td><img id="greskaIme" src="Slike/x.png" alt="X" title="Morate unijeti ime i prezime!" > </td>
-                        </tr>
-                        <tr>
-                            <td>*E mail:</td>
-                            <td><input class="podaci" id="mail" name="mail" onblur="provjeri(this)"></td>
-                            <td><img id="greskaMail" src="Slike/x.png" alt="X" title="Morate unijeti svoju E-Mail adresu!"></td>
-                        </tr>
-                        <tr>
-                            <td>Naslov:</td>
-                            <td><input class="podaci" id="naslov" name="naslov"></td>
-                        </tr>
-                    </table>
-                    <h4 class="tekstPoruka">*Poruka:</h4>
-                    <textarea id="poruka" name="poruka"></textarea>
-                   
-                    <input class="button" type="submit" value="Pošalji">
-                </form>
-            </div>
-             <div id="podnozje">
-                <script>
-                     ucitajPodnozje();
-                </script>
-            </div>
-        </div>
-    </body>
-</html>
-
-
-
+        <input class="button" type="submit" value="Pošalji">
+    </form>
+</div>
+             
