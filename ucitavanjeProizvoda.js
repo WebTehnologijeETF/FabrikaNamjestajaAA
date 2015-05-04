@@ -1,23 +1,4 @@
 
-function dajStranicu(stranica) {
-    var ajax = new XMLHttpRequest();
-    ajax.onreadystatechange = function () {
-        if (ajax.readyState == 4 && ajax.status == 200)
-        
-
-            document.getElementById('sredina').innerHTML = ajax.responseText;
-        if (ajax.readyState == 4 && ajax.status == 404)
-            document.innerHTML = stranica.toString();
-    }
-    ajax.open("GET", stranica.toString(), true);
-    ajax.send();
-    if(stranica == 'ponuda.html') {
-        dobaviTabelu();
-    }
-    return false;
-}
-
-
 
 function dobaviTabelu() {
     var ajax = new XMLHttpRequest();
@@ -39,6 +20,7 @@ function dobaviTabelu() {
 
 function kreirajTabelu(tabela) {
     var t = "<table class='kotrolaProizvoda'><tr><td><input type='button' onclick=akcija('dodavanje')  value='Dodaj'> </td><td> <input type='button' onclick=akcija('promjena') value='Promijeni'> </td><td> <input type='button' onclick=akcija('brisanje') value='Briši'></td></tr></table>";
+    t += "<p id='opisRadaTabele'> Za unos i promjenu popunite polja u tabeli i kliknite na Dodaj odnosno Promijeni <br> Za brisanje, dovoljno je popunit polje za ID i kliknut na Brisi </p>"; 
     t += '<table id="tabelaProizvoda"> <tr><th>id</th><th>Naziv</th><th>Slika</th><th>Cijena</th> <th>Opis</th></tr>';
     
     t += "<tr><td><input id='id'></td><td><input id='naziv'></td><td><input id='slika' type='file'></td><td><input id='cijena'></td> <td><input id='opis'> </td></tr>"
@@ -48,20 +30,43 @@ function kreirajTabelu(tabela) {
     document.getElementById('ponuda').innerHTML = t;
 }
 
+function validiraj(objekat, tip) {
+    if (tip == 'dodavanje' || tip == 'promjena') {
+        if (objekat.naziv.length == 0) return "Niste unijeli naziv!";
+        if (objekat.slika.length == 0) return "Niste unijeli sliku!";
+        if (objekat.cijena == NaN) return "Niste unijelu cijenu!";
+        if (objekat.opis.length == 0) return "Niste unijeli opis!";
+    }else if(tip == 'brisanje') {
+        if(objekat.id == NaN) return "Niste unijeli ID!";
+    }
+
+    return "";
+
+}
+
 
 function akcija(tip) {
     var p = {
-        id : parseInt(document.getElementById('id').value),
+        id : parseInt(document.getElementById('id').value),        
         naziv: document.getElementById('naziv').value,
-        slika: "slikaaaa",
+        slika: document.getElementById('slika').value.toString(),
         cijena: parseFloat(document.getElementById('cijena').value),
         opis: document.getElementById('opis').value
     };
+    
+    
+    var rez = validiraj(p, tip);
+    if(rez != "") {
+        alert(rez);
+        return;
+    }
     var ajax = new XMLHttpRequest();
     ajax.onreadystatechange = function () {
         if (ajax.readyState == 4 && ajax.status == 200) {
             dobaviTabelu();
-            alert("Proizvod je dodan!");
+            if (tip == 'dodavanje') alert("Proizvod je dodan!");
+            if (tip == 'brisanje') alert("Proizvod je obrisan!");
+            if (tip == 'promjena') alert("Proizvod je promjenjen!");
         }
         if (ajax.readyState == 4 && ajax.status == 404)
             alert(ajax.responseText.toString());

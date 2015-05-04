@@ -48,18 +48,54 @@ function provjeri(el) {
             document.getElementById("poruka").disabled = false;
             return provjeriMail(el);
         }
-        
+
     }
+    return true;
+
 }
 
 
-function provjeraPredSlanje(){
-    var ime = document.getElementById("ime");
-    var mail = document.getElementById("mail");
-    if (!provjeri(ime) || !provjeri(mail) || document.getElementById("poruka").value == '') {
-        alert("Slanje nije moguće, provjerite unos!");
-        document.getElementsByClassName("porukaOGresci")[0].style.visibility = 'visible';
+function provjeraMjestaIOpcine() {
+    var mjesto = document.getElementById('mjesto').value;
+    var opcina = document.getElementById('opcina').value;
+    var servis = "http://zamger.etf.unsa.ba/wt/mjesto_opcina.php?opcina=" + opcina + "&mjesto=" + mjesto;
+    if (mjesto.length === 0) {
+        alert("Polje za unos mjesta je prazno!");
         return false;
     }
-     
+    if (opcina.length === 0) {
+        alert("Polje za unos opcine je prezno!");   
+        return false;
+    }    
+    var ajax = new XMLHttpRequest();
+    ajax.onreadystatechange = function () {
+        if (ajax.readyState == 4 && ajax.status == 200) {
+            var odgovor = JSON.parse(ajax.responseText);
+            if (odgovor.hasOwnProperty('greska')) {                
+                alert(odgovor.greska);
+            }
+        }
+        if (ajax.readyState == 4 && ajax.status == 404)
+            document.innerHTML = stranica.toString();
+    }
+    ajax.open("GET", servis, true);
+    ajax.send();    
 }
+
+
+
+function provjeraPredSlanje() {
+    provjeraMjestaIOpcine();  
+
+    var ime = document.getElementById("ime");
+      var mail = document.getElementById("mail");
+      if (!provjeri(ime) || !provjeri(mail) || document.getElementById("poruka").value == '') {
+          alert("Slanje nije moguće, provjerite unos!");
+          document.getElementsByClassName("porukaOGresci")[0].style.visibility = 'visible';
+          return false;
+      } 
+                
+}
+
+
+

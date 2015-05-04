@@ -69,7 +69,7 @@ body {
 
 #meni li {
     display: inline;
-    padding: 5px;
+    padding: 7px;
 }
 
 #meni ul li {
@@ -396,7 +396,11 @@ a.cijena:hover {
     border: 2px solid rgb(100,10,50);
     margin: auto;
     font-size: 30px; 
-    padding: 10px;   
+    padding: 10px;       
+}
+
+#ponuda table {
+    margin-top: 10px;
 }
 
 #ponuda img {
@@ -409,4 +413,13 @@ a.cijena:hover {
     background-color: rgb(100,10,50);
     text-align: center;
     color: white;    
+}
+
+#id {
+    width: 50px;
+}
+
+#opisRadaTabele {
+    margin: auto;
+    padding-left: 50px;
 }
