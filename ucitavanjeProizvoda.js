@@ -19,7 +19,8 @@ function dobaviTabelu() {
 }
 
 function kreirajTabelu(tabela) {
-    var t = "<table class='kotrolaProizvoda'><tr><td><input type='button' onclick=akcija('dodavanje')  value='Dodaj'> </td><td> <input type='button' onclick=akcija('promjena') value='Promijeni'> </td><td> <input type='button' onclick=akcija('brisanje') value='Briši'></td></tr></table>";
+    var t = "<h1> Ponuda proizvoda </h1>"
+    t+= "<table class='kotrolaProizvoda'><tr><td><input type='button' onclick=akcija('dodavanje')  value='Dodaj'> </td><td> <input type='button' onclick=akcija('promjena') value='Promijeni'> </td><td> <input type='button' onclick=akcija('brisanje') value='Briši'></td></tr></table>";
     t += "<p id='opisRadaTabele'> Za unos i promjenu popunite polja u tabeli i kliknite na Dodaj odnosno Promijeni <br> Za brisanje, dovoljno je popunit polje za ID i kliknut na Brisi </p>"; 
     t += '<table id="tabelaProizvoda"> <tr><th>id</th><th>Naziv</th><th>Slika</th><th>Cijena</th> <th>Opis</th></tr>';
     

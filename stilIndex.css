@@ -317,6 +317,11 @@ a.cijena:hover {
     visibility: hidden;
 }
 
+#kontakt h2 {
+    text-align: center;
+    color: rgb(100,10,50);
+}
+
 #kontakt p {
     font-size: 15px;    
     padding-left: 50px;
@@ -328,6 +333,11 @@ a.cijena:hover {
     padding: 10px;
     text-align: right;
     border: 0px;
+}
+
+#kontakt h1 {
+    text-align: center;
+    color: rgb(100,10,50);
 }
 
 .porukaOGresci {
@@ -422,4 +432,39 @@ a.cijena:hover {
 #opisRadaTabele {
     margin: auto;
     padding-left: 50px;
+}
+
+#predSlanje {
+    color: white;    
+    border: 10px solid rgb(100,10,50);
+    padding: 10px;
+    margin: 10px;
+    border-radius: 30px;
+    background-color: rgb(100,10,50);
+}
+
+#predSlanje p {
+    margin: auto;
+    text-align: left;
+    font-size: 20px;
+    text-align: justify;
+    padding-right: 40px;
+}
+
+#predSlanje h3 {
+    text-align: center;
+    color: white;    
+    margin: auto;
+}
+
+#predSlanje input {
+    margin: 10px;
+    font-size: 30px;
+}
+
+#sredina h1 {
+    background-color: rgb(100,10,50);
+    text-align: center;
+    color: white;
+    border-radius: 14px;
 }
