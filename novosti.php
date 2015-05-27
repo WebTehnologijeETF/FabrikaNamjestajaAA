@@ -58,7 +58,7 @@
          echo  '<p>'.$value->datum.'</p> </div> </div>';                                   
          }    */
         
-           $veza = new PDO("mysql:dbname=agovicdb;host=localhost;charset=utf8", "agovicuser", "*agovicpass#");
+            $veza = new PDO("mysql:dbname=agovicdb;host=localhost;charset=utf8", "agovicuser", "*agovicpass#");
             $veza->exec("set names utf8");                                             
                 $rezultat = $veza->query("select * from novost;");
         
@@ -67,18 +67,14 @@
                 print "SQL greška: " . $greska[2];
                 exit();
                 }	                
-                echo "<div id='sviElementi'>";                            
-                foreach($rezultat as $value) {                                                                
-                     echo "<div class='ponudaElement'>";        
-                     echo '<div class="vrstaElementa">';
-                     echo '<h3>'.$value["naslov"].'</h3>';
-                     echo '<img class="slikaArtikla" src="'.$value["slika"].'" alt="'.$value["naslov"].'"></div>';
-                     echo '<div class="opisElementa">';
-                     echo  '<p>'.$value["tekst"].'</p></div>';
-        
-                     echo '<div class="cijena">';                     
-                     echo '<a href="#" class="cijena">Detalji</a>';
-                     echo  '<p>'.date("d.m.Y.(h:i)", $value['datum']).'</p> </div> </div>';                                      
+                echo "<div id='ponuda'>";                            
+                foreach($rezultat as $value) {    
+                    
+                    echo '<div class="element">';
+                    echo '<a href="vijest.php?vijestId='.$value["id"].'" onclick="return dajStranicu("vijest.php")">';
+                    echo '<h2>'.$value["naslov"].'</h2>';
+                    echo '<img src="'.$value["slika"].'" alt="'.$value["naslov"].'">  </a>  </div>';
+                                                                                                                
                 }
                 echo "</div>";
         

@@ -468,3 +468,88 @@ a.cijena:hover {
     color: white;
     border-radius: 14px;
 }
+
+
+/*NOVOST--------------------------*/
+
+#novost {
+    width: 990px;
+    border: 1px solid rgb(100,10,50);
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 10px;    
+    margin-bottom: 10px;
+}
+
+#slikaNovost {
+    margin: auto;
+    text-align: center;  
+}
+
+
+#tekstNovost p{
+    margin: auto;
+    margin-left: 50px;
+    margin-right: 50px;   
+    text-align: left; 
+    font-size: 20px;
+}
+
+#tekstNovost {
+    text-align: right;
+    margin-right: 50px;
+}
+
+#ostaviKomentarNovost {
+    border: 1px solid rgb(100,10,50);
+    border-radius: 10px;
+    width: 980px;
+    margin: auto;
+    
+}
+
+#ostaviKomentarNovost form {
+    margin: 20px;
+}
+
+#ostaviKomentarNovost input {
+    margin: 10px;    
+}
+
+.komentarArea{
+    width: 935px;
+    height: 100px;
+}
+
+#komentariNovost {
+    border: 1px solid rgb(100,10,50);
+    width: 980px;
+    margin: auto;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+}
+
+#naslovKomentara {
+    background-color: rgb(100,10,50);
+    color: white;
+    border-radius: 10px;
+}
+
+#komentariNovost p{
+    padding-left: 40px;
+    margin-top: 0px;
+    font-size: 20px;
+}
+
+#novost h3 {
+    text-align: center;
+}
+
+.brojKomentara {
+    padding: 10px;    
+    margin: auto;
+    color: rgb(100,10,50);
+    font-size: 30px;
+}

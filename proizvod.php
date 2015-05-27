@@ -73,7 +73,7 @@
                               echo  '<img class="slikaArtikla" src="'.$proizvod['slika'].'" alt="'.$proizvod["naziv"].'"> </div>';
                               echo  '<div class="opisElementa">  <p>'.$proizvod["opis"].'</p>  </div> <div class="cijena">';
                               echo  '<p class="cijena">Cijena: '.$proizvod['cijena'].' KM </p>';
-                              echo  '<a href="#" class="cijena">Pogledaj detalje</a> </div>';                                        
+                              echo  '<a href="proizvod.php?id='.$proizvod['id'].'" class="cijena">Pogledaj detalje</a> </div>';                                        
                         }
                         echo "</div>";
                     }
