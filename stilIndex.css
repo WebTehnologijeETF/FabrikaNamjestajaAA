@@ -72,6 +72,11 @@ body {
     padding: 7px;
 }
 
+#meni li:last-child {
+    float: right;
+    border-radius: 20px;    
+}
+
 #meni ul li {
     display: inline-block;    
 }
@@ -138,6 +143,11 @@ body {
     width: 317px;    
     color: rgb(100,10,50);
     text-align: center;
+}
+
+.slikaProizvoda{
+    width: 317px;
+    height: 260px;
 }
 
 .element img {
@@ -413,10 +423,10 @@ a.cijena:hover {
     margin-top: 10px;
 }
 
-#ponuda img {
+/*#ponuda img {
     width: 100px;
     height: 100px;
-}
+}*/
 
 #ponuda h1 {
     padding: 10px;
@@ -552,4 +562,54 @@ a.cijena:hover {
     margin: auto;
     color: rgb(100,10,50);
     font-size: 30px;
+}
+
+
+/*>>>>>>ADMIN PANEL<<<<<<<<*/
+
+#adminPanel {
+    background-color: white;
+}
+
+#adminNovost {
+    width: 900px;
+    border: 1px solid rgb(100,10,50);    
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+#adminNovost table, tr, td {    
+    border: 0px solid white;
+}
+
+.buttonNovosti {
+    height: 40px;
+    width: 80px;   
+    margin: auto;    
+}
+
+#adminNovost textarea {
+    width: 875px;    
+    height: 200px;
+    margin-left: 10px;
+}
+
+
+/*>>>>>>>>> LOGIN <<<<<<<<<<<*/
+
+#loginDiv {
+    visibility: collapse;
+    position: absolute;
+    background-color: rgb(100,10,50);
+    border: 1px solid white;
+    color: white;
+    margin: auto;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+#loginDiv a{
+    color: blue;
+    border: 0px;
+    font-size: 10px;   
 }
