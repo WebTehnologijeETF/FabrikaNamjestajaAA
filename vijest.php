@@ -1,27 +1,27 @@
-<?php // izvršava se nakon slanja komentara (spremanje u bazu)
-    session_start();
-    if(isset($_POST["btnSubmit"])) {                                                                        
-        $veza = new PDO("mysql:dbname=agovicdb;host=localhost;charset=utf8", "agovicuser", "*agovicpass#");
-        $veza->exec("set names utf8");                             
-        $rez = $veza->query("insert into komentar set novostId=".$_REQUEST['vijestId'].", autor='".$_POST['komentarIme']."', mail='".$_POST['komentarMail']."', tekst='".$_POST['komentarTekst']."'");                            
-        if (!$rez) {
-            $greska = $veza->errorInfo();
-            print "SQL greška kod unosa komentara: ". $greska[2];
-            exit();
-        }         
-    }
-        //izvršava se nakon što je admin prijavljen i klikne na link za brisanje komentara
-    if(isset($_REQUEST['zaObrisat']) && isset($_SESSION['username'])) {
-        $veza = new PDO("mysql:dbname=agovicdb;host=localhost;charset=utf8", "agovicuser", "*agovicpass#");
-        $veza->exec("set names utf8"); 
-        $rez = $veza->query("delete from komentar where id=".$_REQUEST['zaObrisat']);                            
-        if (!$rez) {
-            $greska = $veza->errorInfo();
-            print "SQL greška kod brisanja komentara: ". $greska[2];
-            exit();
-        }    
-    }
-
+<?php
+    // izvršava se nakon slanja komentara (spremanje u bazu)       
+       if(isset($_POST["btnSubmit"])) {                                                                        
+           $veza = new PDO("mysql:dbname=agovicdb;host=localhost;charset=utf8", "agovicuser", "*agovicpass#");
+           $veza->exec("set names utf8");                             
+           $rez = $veza->query("insert into komentar set novostId=".$_REQUEST['vijestId'].", autor='".$_POST['komentarIme']."', mail='".$_POST['komentarMail']."', tekst='".$_POST['komentarTekst']."'");                            
+           if (!$rez) {
+               $greska = $veza->errorInfo();
+               print "SQL greška kod unosa komentara: ". $greska[2];
+               exit();
+           }         
+       }
+           //izvršava se nakon što je admin prijavljen i klikne na link za brisanje komentara
+       if(isset($_REQUEST['zaObrisat'])) {
+           $veza = new PDO("mysql:dbname=agovicdb;host=localhost;charset=utf8", "agovicuser", "*agovicpass#");
+           $veza->exec("set names utf8"); 
+           $rez = $veza->query("delete from komentar where id=".$_REQUEST['zaObrisat']);                            
+           if (!$rez) {
+               $greska = $veza->errorInfo();
+               print "SQL greška kod brisanja komentara: ". $greska[2];
+               exit();
+           }    
+       }
+    
 ?>
 <!DOCTYPE html>
 <html>
@@ -36,7 +36,9 @@
     <body>
         <div id="okvir">
             <div id="zaglavlje">
-                <script> dajDiv('zaglavlje', 'zaglavlje.php')</script>                
+                <script>
+ dajDiv('zaglavlje', 'zaglavlje.php')
+                </script>
             </div>
 
             <div id="sredina">
@@ -56,7 +58,7 @@
                             $rezultat = $value;
                             break;
                         }
-
+                    
                         //prebrojavanje komentara
                         $broj = $veza->query("select count(*) from komentar where novostId=".$_REQUEST['vijestId'].";");		            
                         if (!$broj) {
@@ -98,12 +100,14 @@
                               if($brojKomentara == 1) print "<a class='brojKomentara' href=vijest.php?vijestId=".$_REQUEST['vijestId']."&prikaziKomentare=prikazi>".$brojKomentara." komentar </a>";
                               else print "<a class='brojKomentara' href=vijest.php?vijestId=".$_REQUEST['vijestId']."&prikaziKomentare=prikazi>".$brojKomentara." komentara </a>";
                           }
-                        
+                       
                           //dobavaljanje svih komentara i njihov prikaz
                         if(isset($_REQUEST["prikaziKomentare"])) {
+                              session_start();
                              $veza = new PDO("mysql:dbname=agovicdb;host=localhost;charset=utf8", "agovicuser", "*agovicpass#");
                              $veza->exec("set names utf8");                             
-                             $rez = $veza->query("select * from komentar where novostId=".$_REQUEST['vijestId']." order by datum DESC;");                            
+                             $rez = $veza->prepare("select * from komentar where novostId=? order by datum DESC;");    
+                             $rez->execute(array($_REQUEST['vijestId']));                        
                              if (!$rez) {
                                 $greska = $veza->errorInfo();
                                 print "SQL greška kod prikaza komentara: ". $greska[2];
@@ -128,7 +132,9 @@
             </div>
 
             <div id="podnozje">
-               <script> dajDiv('podnozje', 'podnozje.html')</script>         
+                <script>
+ dajDiv('podnozje', 'podnozje.html')
+                </script>
             </div>
         </div>
     </body>

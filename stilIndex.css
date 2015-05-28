@@ -152,12 +152,14 @@ body {
 
 .element img {
     width: 317px;
-    height: 260px;
-    padding-left: 5px;
+    height: 240px;
+    padding-left: 5px;    
 }
 
 .element a {
     text-decoration: none;
+    margin-bottom: 0px;
+    margin: 0px;    
 }
 
 .element a:hover {
@@ -605,7 +607,7 @@ a.cijena:hover {
 
 .buttonNovosti {
     height: 50px;
-    width: 120px;   
+    width: 12ele0px;   
     margin: auto;  
     font-size: 20px;  
 }

@@ -28,9 +28,12 @@
             $_SESSION['adminId'] = $rezultat['id'];            
         }    
     }
-    if(isset($_POST['btnOdjava'])) {                
+    if(isset($_POST['btnOdjava'])) {  
+        session_start();
+        session_unregister('username');
         session_unset();
         session_destroy();
+        echo "xxxxxxxxaaaaa";                             
     }
 ?>
 <!DOCTYPE html>
