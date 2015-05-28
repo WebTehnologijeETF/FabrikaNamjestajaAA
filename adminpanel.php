@@ -10,23 +10,6 @@
     //                }    
     
 ?>
-<?php
-    $veza = new PDO("mysql:dbname=agovicdb;host=localhost;charset=utf8", "agovicuser", "*agovicpass#");
-    $veza->exec("set names utf8");     
-    $rez = $veza­->query('SELECT * from admin');     
-                 
-    if (!$rez) {
-            $greska = $veza->errorInfo();
-            print "SQL greška kod dobavljanja admina: ". $greska[2];
-            exit();
-    }
-    echo "<table>";
-    foreach($rez as $value) {   
-        echo "xxxx";                     
-        echo '<tr><td>'.$value['id'].'</td><td>'.$value['username'].'</td><td>'.$value['mail'].'</td><td><a href="adminpanel.php?edit='.$value['id'].'>Uredi</a></td><td><a href="adminpanel.php?obrisi='.$value['id'].'">Obriši</a></td><td><a href="adminpanel.php?novaLozinka='.$value['id'].'>Nova lozinka</a></td></tr>';
-    }
-    echo "</table>"; 
-?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -56,7 +39,7 @@
                     $veza = new PDO("mysql:dbname=agovicdb;host=localhost;charset=utf8", "agovicuser", "*agovicpass#");
                     $veza->exec("set names utf8");   
                     
-                    $rez = $veza­->query("SELECT * from admin");     
+                    $rez = $veza->query("select * from korisnik");    
                     echo "xxxx";               
                     if (!$rez) {
                             $greska = $veza->errorInfo();
@@ -64,7 +47,7 @@
                             exit();
                     }
                     
-                    foreach($rez->fetch() as $value) {   
+                    foreach($rez as $value) {   
                         echo "xxxx";                     
                         echo '<tr><td>'.$value['id'].'</td><td>'.$value['username'].'</td><td>'.$value['mail'].'</td><td><a href="adminpanel.php?edit='.$value['id'].'>Uredi</a></td><td><a href="adminpanel.php?obrisi='.$value['id'].'">Obriši</a></td><td><a href="adminpanel.php?novaLozinka='.$value['id'].'>Nova lozinka</a></td></tr>';
                     }
