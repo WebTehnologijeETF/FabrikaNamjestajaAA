@@ -607,7 +607,7 @@ a.cijena:hover {
 
 .buttonNovosti {
     height: 50px;
-    width: 12ele0px;   
+    width: 150px;   
     margin: auto;  
     font-size: 20px;  
 }
@@ -618,6 +618,9 @@ a.cijena:hover {
     margin-left: 10px;
 }
 
+#adminNovost input {
+    font-size: 30px;
+}
 
 /*>>>>>>>>> LOGIN <<<<<<<<<<<*/
 

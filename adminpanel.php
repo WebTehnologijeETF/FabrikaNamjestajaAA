@@ -93,7 +93,6 @@
                         <td>Korisničko ime</td>
                         <td>Mail</td>
                         <td>Briši</td>
-                        <td>Nova lozinka</td>
                     </tr>
                     <?php
                         //ispisivanje svih administratora u tabelu
@@ -107,7 +106,7 @@
                         }
                         
                         foreach($rez as $value) {                                                                    
-                            echo '<tr><td>'.$value['id'].'</td><td>'.$value['username'].'</td><td>'.$value['mail'].'</td><td><a href="adminpanel.php?obrisi='.$value["id"].'">Obriši</a></td><td><a href="adminpanel.php?novaLozinka='.$value['id'].'">Nova lozinka</a></td></tr>';
+                            echo '<tr><td>'.$value['id'].'</td><td>'.$value['username'].'</td><td>'.$value['mail'].'</td><td><a href="adminpanel.php?obrisi='.$value["id"].'">Obriši</a></td></tr>';
                         }
                         
                     ?>

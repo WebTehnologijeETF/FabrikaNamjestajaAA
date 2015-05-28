@@ -47,7 +47,8 @@
                     if(isset($_REQUEST["vijestId"])) {
                         $veza = new PDO("mysql:dbname=agovicdb;host=localhost;charset=utf8", "agovicuser", "*agovicpass#");
                         $veza->exec("set names utf8");                         
-                        $rez = $veza->query("select * from novost where id=".$_REQUEST["vijestId"]);  
+                        $rez = $veza->prepare("select * from novost where id=?");  
+                        $rez->execute(array($_REQUEST["vijestId"]));
                         if (!$rez) {
                             $greska = $veza->errorInfo();
                             print "SQL greška kod dobavljanja vijesti: ". $greska[2];
@@ -60,7 +61,8 @@
                         }
                     
                         //prebrojavanje komentara
-                        $broj = $veza->query("select count(*) from komentar where novostId=".$_REQUEST['vijestId'].";");		            
+                        $broj = $veza->prepare("select count(*) from komentar where novostId=?");	
+                        $broj->execute(array($_REQUEST['vijestId']));
                         if (!$broj) {
                             $greska = $veza->errorInfo();
                             print "SQL greška kod dobavljanja komentara: " . $greska[2];
