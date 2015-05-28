@@ -18,63 +18,60 @@
             <div id="sredina">
                 <h1> Novosti </h1>
                 <?php
-                    if(isset($_POST['btnSubmit'])) {
-                        $veza = new PDO("mysql:dbname=agovicdb;host=localhost;charset=utf8", "agovicuser", "*agovicpass#");
-                        $veza->exec("set names utf8");                             
-                        $rez = $veza->query("insert into novost set naslov='".$_POST['naslov']."', tekst='".$_POST['novost']."', slika='".$_POST['slika']."'");                            
-                        if (!$rez) {
-                        $greska = $veza->errorInfo();
-                        print "SQL greška kod unosa novosti: ".$greska[2];
-                        exit();
-                        }     
-                    }        
-                ?>
-        //if(isset($_SESSION['admin']) {
-        //echo
-        '
-                <div id="adminNovost">
-                    <form method="post" action="novosti.php">
-
-                        <table>
-                            <tr>
-                                <td>Naslov:</td>
-                                <td><input name="naslov"></td>
-                            </tr>
-                            <tr>
-                                <td>Slika:
-                                <td><input name="slika"></td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">Tekst Novosti:</td>
-                            </tr>
-                        </table>
-                        <textarea name="novost"></textarea>
-                        <input class="buttonNovosti" type="reset" value="Obriši sve">
-                        <input class="buttonNovosti" name="btnSubmit" type="submit" value="Objavi">
-                    </form>
-                </div>
-        //}
-                <?php
-                    $veza = new PDO("mysql:dbname=agovicdb;host=localhost;charset=utf8", "agovicuser", "*agovicpass#");
-                    $veza->exec("set names utf8");                                             
-                        $rezultat = $veza->query("select * from novost order by datum DESC;");
-                    
-                        if (!$rezultat) {
+                        session_start();
+                        if(isset($_POST['btnSubmit'])) {
+                            $veza = new PDO("mysql:dbname=agovicdb;host=localhost;charset=utf8", "agovicuser", "*agovicpass#");
+                            $veza->exec("set names utf8");                             
+                            $rez = $veza->query("insert into novost set naslov='".$_POST['naslov']."', tekst='".$_POST['novost']."', slika='".$_POST['slika']."'");                            
+                            if (!$rez) {
                             $greska = $veza->errorInfo();
-                            print "SQL greška: " . $greska[2];
+                            print "SQL greška kod unosa novosti: ".$greska[2];
                             exit();
-                        }	 
+                            }     
+                        }                        
+                    if(isset($_SESSION['username'])) {
+                    print '<div id="adminNovost">
+                        <form method="post" action="novosti.php">
                     
-                        echo "<div id='ponuda'>";                            
-                        foreach($rezultat as $value) {    
+                            <table>
+                                <tr>
+                                    <td>Naslov:</td>
+                                    <td><input name="naslov"></td>
+                                </tr>
+                                <tr>
+                                    <td>Slika:
+                                    <td><input name="slika"></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">Tekst Novosti:</td>
+                                </tr>
+                            </table>
+                            <textarea name="novost"></textarea>
+                            <input class="buttonNovosti" type="reset" value="Obriši sve">
+                            <input class="buttonNovosti" name="btnSubmit" type="submit" value="Objavi">
+                        </form>
+                    </div>';
+                    }
+                        $veza = new PDO("mysql:dbname=agovicdb;host=localhost;charset=utf8", "agovicuser", "*agovicpass#");
+                        $veza->exec("set names utf8");                                             
+                            $rezultat = $veza->query("select * from novost order by datum DESC;");
                     
-                            echo '<div class="element">';
-                            echo '<a href="vijest.php?vijestId='.$value["id"].'">';
-                            echo '<h2>'.$value["naslov"].'</h2>';
-                            echo '<img class="slikaProizvoda" src="'.$value["slika"].'" alt="'.$value["naslov"].'">  </a>  </div>';
+                            if (!$rezultat) {
+                                $greska = $veza->errorInfo();
+                                print "SQL greška: " . $greska[2];
+                                exit();
+                            }	 
                     
-                        }
-                        echo "</div>";                                        
+                            echo "<div id='ponuda'>";                            
+                            foreach($rezultat as $value) {    
+                    
+                                echo '<div class="element">';
+                                echo '<a href="vijest.php?vijestId='.$value["id"].'">';
+                                echo '<h2>'.$value["naslov"].'</h2>';
+                                echo '<img class="slikaProizvoda" src="'.$value["slika"].'" alt="'.$value["naslov"].'">  </a>  </div>';
+                    
+                            }
+                            echo "</div>";                                        
                 ?>
             </div>
             <div id="podnozje">

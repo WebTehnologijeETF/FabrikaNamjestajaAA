@@ -1,7 +1,8 @@
+<?php session_start(); ?>
 <div id="meni">
     <ul>
         <li><a href="#" onclick="return dajStranicu('pocetna.html')">Početna</a></li>
-        <li><a href="#" onclick="return dajStranicu('novosti.php')">Novosti</a></li>
+        <li><a href="novosti.php">Novosti</a></li>
         <li onmouseover="document.getElementById('padajuciMeni').style.visibility = 'visible';" onmouseout="document.getElementById('padajuciMeni').style.visibility = 'hidden';">
             <a href="#" onclick="return dajStranicu('ponuda.html')">Ponuda</a>
             <div id="padajuciMeni" onmouseout="document.getElementById('padajuciMeni').style.visibility = 'hidden';">
@@ -19,7 +20,7 @@
         <?php
             
             if(!isset($_SESSION['username'])) {
-            print '<li onmouseover="prikaziLogin();" onmouseout="sakrijLogin();"> <a href="#">Prijava</a>
+            echo '<li onmouseover="prikaziLogin();" onmouseout="sakrijLogin();"> <a href="#">Prijava</a>
                 <div id="loginDiv">
                     <script>alert("aasasa"); </script>
                     <form method="post" action="index.php">
@@ -30,11 +31,12 @@
                     </form>
                 </div>
             </li>';
-            }else {
-                print '<li onmouseover="prikaziLogin();" onmouseout="sakrijLogin();"> <a href="#">Odjava</a>
+            }else {                
+                echo '<li onmouseover="prikaziLogin();" onmouseout="sakrijLogin();"> <a href="#">Odjava</a>
                 <div id="loginDiv">
                     <form method="post" action="index.php">
                         <h4>Logovani korisnik:</h4> <h3>'.$_SESSION['username'].'</h3>
+                        <a href=adminpanel.php><h2>Admin Panel</h2></a>
                         <input type="submit" name="btnOdjava" value="Odjava">
                     </form>
                 </div>

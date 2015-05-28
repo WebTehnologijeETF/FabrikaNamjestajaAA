@@ -1,5 +1,6 @@
 <div id="sredina">
     <h1>Kontakt</h1>
+    
     <div id="kontakt">
         <?php
             

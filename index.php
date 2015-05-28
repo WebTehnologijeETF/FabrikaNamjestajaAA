@@ -6,12 +6,10 @@
     
         $user = $_POST['username'];
         $pass = $_POST['password'];
-        //$pass = md5($pass);
+        $pass = md5($pass);
     
-        $upit = $veza->query("select * from korisnik where username='".$user."' and password='".$pass."'");        
-        //$upit->bindValue(":username", $user, PDO::PARAM_STR);  
-        //$upit->bindValue(":password", $pass, PDO::PARAM_STR);     
-        //$upit­->execute();                 
+        $upit = $veza->prepare("select * from korisnik where username=? and password=?");           
+        $upit->execute(array($user, $pass));           
         if (!$upit) {
             $greska = $veza->errorInfo();
             print "SQL greška kod dobavljanja admina: ". $greska[2];
@@ -22,15 +20,15 @@
                 $rezultat = $value;
                 break;
             }
-            if($rezultat == NULL) echo "ne valja";
+        if($rezultat == NULL) echo "Administrator sa tim imenom ili lozinkom ne postoji !";
         else{          
             session_start();            
             $_SESSION['username'] = $rezultat['username'];
             $_SESSION['mail'] = $rezultat['mail'];
-            $_SESSION['adminId'] = $rezultat['id'];
+            $_SESSION['adminId'] = $rezultat['id'];            
         }    
     }
-    if(isset($_POST['btnOdjava'])) {
+    if(isset($_POST['btnOdjava'])) {                
         session_unset();
         session_destroy();
     }
@@ -48,8 +46,8 @@
     <body>
         <div id="okvir">
             <div id="zaglavlje">
-                <script>
- dajDiv('zaglavlje', 'zaglavlje.php')
+                <script>                    
+                    dajDiv('zaglavlje', 'zaglavlje.php')
                 </script>
             </div>
             <div id="sredina">
@@ -60,7 +58,7 @@
 
             <div id="podnozje">
                 <script>
- dajDiv('podnozje', 'podnozje.html')
+                    dajDiv('podnozje', 'podnozje.html')
                 </script>
             </div>
         </div>

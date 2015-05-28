@@ -1,4 +1,5 @@
 <?php // izvršava se nakon slanja komentara (spremanje u bazu)
+    session_start();
     if(isset($_POST["btnSubmit"])) {                                                                        
         $veza = new PDO("mysql:dbname=agovicdb;host=localhost;charset=utf8", "agovicuser", "*agovicpass#");
         $veza->exec("set names utf8");                             
@@ -10,7 +11,7 @@
         }         
     }
         //izvršava se nakon što je admin prijavljen i klikne na link za brisanje komentara
-    if(isset($_REQUEST['zaObrisat']) && isset($_SESSION['admin'])) {
+    if(isset($_REQUEST['zaObrisat']) && isset($_SESSION['username'])) {
         $veza = new PDO("mysql:dbname=agovicdb;host=localhost;charset=utf8", "agovicuser", "*agovicpass#");
         $veza->exec("set names utf8"); 
         $rez = $veza->query("delete from komentar where id=".$_REQUEST['zaObrisat']);                            
@@ -115,7 +116,7 @@
                                 echo    "<p>".$rezultat['datum']."</p>";
                                 echo    "<p>".$rezultat['autor']."</p>";
                                 echo    "<p>".$rezultat['mail']."</p>";                                
-                                if(isset($_SESSION['admin'])) echo "<a href=vijest.php?zaObrisat=".$rezultat['id'].">Obriši</a>"; 
+                                if(isset($_SESSION['username'])) echo "<a href=vijest.php?zaObrisat=".$rezultat['id']."&vijestId=".$_REQUEST['vijestId'].">Obriši</a>"; 
                                 echo    "</div>";
                                 echo    "<p class='tekstVijesti'>".$rezultat['tekst']."</p>";
                                 echo    "</div>";

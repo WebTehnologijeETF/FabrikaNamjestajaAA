@@ -571,6 +571,27 @@ a.cijena:hover {
     background-color: white;
 }
 
+#adminPanel table, tr, td {
+    margin: auto;
+    border: 1px solid rgb(100,10,50);
+}
+
+
+#adminPanel tr:last-child{
+    text-align: center;
+}
+
+#adminPanel input {
+    font-size: 30px;
+}
+
+
+#adminPanel h1 {
+    background-color: rgb(100,10,50);  
+    text-align: center;
+    color: white;  
+}
+
 #adminNovost {
     width: 900px;
     border: 1px solid rgb(100,10,50);    
@@ -579,13 +600,14 @@ a.cijena:hover {
 }
 
 #adminNovost table, tr, td {    
-    border: 0px solid white;
+    border: 0px solid rgb(100,10,50);
 }
 
 .buttonNovosti {
-    height: 40px;
-    width: 80px;   
-    margin: auto;    
+    height: 50px;
+    width: 120px;   
+    margin: auto;  
+    font-size: 20px;  
 }
 
 #adminNovost textarea {
