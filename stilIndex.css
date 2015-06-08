@@ -493,6 +493,16 @@ a.cijena:hover {
     margin-bottom: 10px;
 }
 
+.divAdmin {
+    float: left;
+}
+
+.divAdmin a {
+    font-size: 20px;
+    padding-left: 20px;    
+    margin: auto;
+}
+
 #slikaNovost {
     margin: auto;
     text-align: center;  
@@ -640,3 +650,4 @@ a.cijena:hover {
     border: 0px;
     font-size: 10px;   
 }
+

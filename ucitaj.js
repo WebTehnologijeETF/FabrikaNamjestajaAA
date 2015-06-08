@@ -10,26 +10,25 @@ function sakrijLogin() {
 function dajStranicu(stranica) {
     var ajax = new XMLHttpRequest();
     ajax.onreadystatechange = function () {
-        if (ajax.readyState == 4 && ajax.status == 200)
-        
-
+        if (ajax.readyState == 4 && ajax.status == 200) {
             document.getElementById('sredina').innerHTML = ajax.responseText;
+        }
         if (ajax.readyState == 4 && ajax.status == 404)
             document.innerHTML = stranica.toString();
     }
     ajax.open("GET", stranica.toString(), true);
     ajax.send();
-    if(stranica == 'ponuda.html') {
+    if (stranica == 'ponuda.html') {
         dobaviTabelu();
     }
     return false;
 }
 
-function dajDiv(lokacija ,stranica) {
+function dajDiv(lokacija, stranica) {
     var ajax = new XMLHttpRequest();
     ajax.onreadystatechange = function () {
         if (ajax.readyState == 4 && ajax.status == 200)
-        
+
 
             document.getElementById(lokacija).innerHTML = ajax.responseText;
         if (ajax.readyState == 4 && ajax.status == 404)
@@ -37,7 +36,7 @@ function dajDiv(lokacija ,stranica) {
     }
     ajax.open("GET", stranica.toString(), true);
     ajax.send();
-    if(stranica == 'ponuda.html') {
+    if (stranica == 'ponuda.html') {
         dobaviTabelu();
     }
     return false;
@@ -65,7 +64,7 @@ function dobaviTabelu() {
 function kreirajTabelu(tabela) {
     var t = "<table class='kotrolaProizvoda'><tr><td><input type='button' onclick=akcija('dodavanje')  value='Dodaj'> </td><td> <input type='button' onclick=akcija('promjena') value='Promijeni'> </td><td> <input type='button' onclick=akcija('brisanje') value='Briši'></td></tr></table>";
     t += '<table id="tabelaProizvoda"> <tr><th>id</th><th>Naziv</th><th>Slika</th><th>Cijena</th> <th>Opis</th></tr>';
-    
+
     t += "<tr><td><input id='id'></td><td><input id='naziv'></td><td><input id='slika' type='file'></td><td><input id='cijena'></td> <td><input id='opis'> </td></tr>"
     for (i = 0; i < tabela.length; i++)
         t += "<tr><td>" + tabela[i].id + "</td> <td>" + tabela[i].naziv + '</td><td>' + tabela[i].slika + '</td><td>' + tabela[i].cijena + '</td><td>' + tabela[i].opis + "</td></tr>";
@@ -76,7 +75,7 @@ function kreirajTabelu(tabela) {
 
 function akcija(tip) {
     var p = {
-        id : parseInt(document.getElementById('id').value),
+        id: parseInt(document.getElementById('id').value),
         naziv: document.getElementById('naziv').value,
         slika: "slikaaaa",
         cijena: parseFloat(document.getElementById('cijena').value),
@@ -94,5 +93,5 @@ function akcija(tip) {
     }
     ajax.open("POST", "http://zamger.etf.unsa.ba/wt/proizvodi.php", true);
     ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    ajax.send("akcija=" + tip + "&brindexa=15987&proizvod=" + JSON.stringify(p));    
+    ajax.send("akcija=" + tip + "&brindexa=15987&proizvod=" + JSON.stringify(p));
 }

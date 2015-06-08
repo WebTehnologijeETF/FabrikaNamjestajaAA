@@ -30,10 +30,8 @@
     }
     if(isset($_POST['btnOdjava'])) {  
         session_start();
-        session_unregister('username');
         session_unset();
-        session_destroy();
-        echo "xxxxxxxxaaaaa";                             
+        session_destroy();                                   
     }
 ?>
 <!DOCTYPE html>
@@ -45,6 +43,7 @@
         <script src="ucitaj.js"></script>
         <script src="validacionaSkripta.js"></script>
         <script src="ucitavanjeProizvoda.js"></script>
+        <script src="skripte/novost.js"></script>
     </head>
     <body>
         <div id="okvir">
