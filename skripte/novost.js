@@ -1,5 +1,7 @@
 
-function dobaviNovosti(admin) { //dobavljanje svih novosti, atribut admin je samo indikator da li je neko logovan    
+
+function dobaviNovosti(admin) { //dobavljanje svih novosti, atribut admin je samo indikator da li je neko logovan
+    document.getElementById("ponuda").innerHTML = "";
     var ajax = new XMLHttpRequest();
     ajax.onreadystatechange = function () {
         if (ajax.readyState == 4 && ajax.status == 200) {
@@ -26,7 +28,7 @@ function dodajNovost(id) {     // dodavanje novosti za id == null, a uređivanje
         if (ajax.readyState == 4 && ajax.status == 200) {
             var rez = JSON.parse(ajax.responseText);
             if(id == null) {
-                if (rez.OK == "OK") { alert("Novost je dodana"); dodajJednuNovost(novost, true); }
+                if (rez.OK == "OK") { alert("Novost je dodana"); }
                 else alert("Problem kod unosa!"); 
             }else {
                 if (rez.OK == "OK") { alert("Novost je uređena!"); }
@@ -38,15 +40,9 @@ function dodajNovost(id) {     // dodavanje novosti za id == null, a uređivanje
         }
 
     }
-    if (id == null) {
         ajax.open("POST", "servis/novost.php", true);
         ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         ajax.send("naslov=" + novost.naslov + "&tekst=" + novost.tekst + "&slika=" + novost.slika);
-    }else {
-        jax.open("PUT", "servis/novost.php", true);
-        ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        ajax.send("naslov=" + novost.naslov + "&tekst=" + novost.tekst + "&slika=" + novost.slika + "&id="+id);
-    }
 }
 
 
@@ -67,6 +63,7 @@ function dodajJednuNovost(vijest, admin) { // kreiranje elementa novosti
 
     var link = document.createElement("a"); // link na cijelu vijest
     link.setAttribute("href", "#");
+    link.setAttribute("onclick", "dobaviVijest(" + vijest.id + "," + admin + ")");
 
     var naslov = document.createElement("h2"); // naslov
     naslov.innerHTML = vijest.naslov;

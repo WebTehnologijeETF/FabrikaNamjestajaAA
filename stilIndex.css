@@ -556,13 +556,23 @@ a.cijena:hover {
 #naslovKomentara {
     background-color: rgb(100,10,50);
     color: white;
-    border-radius: 10px;
+    border-radius: 10px;    
+}
+
+#naslovKomentara a {
+    color: white;
 }
 
 #komentariNovost p{
     padding-left: 40px;
     margin-top: 0px;
     font-size: 20px;
+}
+
+#listaKomentar li {
+    display: inline;
+    padding-left: 30px;
+    list-style-position:inside
 }
 
 #novost h3 {

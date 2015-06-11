@@ -9,6 +9,8 @@
         <script src="validacionaSkripta.js"></script>
         <script src="ucitavanjeProizvoda.js"></script>
         <script src="skripte/novost.js"></script>
+        <script src="skripte/vijest.js"></script>
+        <script src="skripte/komentar.js"></script>
     </head>
     <body>
         <div id="okvir">
@@ -18,11 +20,12 @@
                 </script>
             </div>
             <div id="sredina">
-                
+
 
                 <h1> Novosti </h1>
                 <div id="ponuda">
-                    <?php                        
+                    <?php
+                        
                         if(isset($_SESSION['username'])) {
                             print '<div id="adminNovost">                        
                             <input type="hidden" name="vijestId" value='.$_REQUEST['zaUredit'].'>
@@ -41,7 +44,7 @@
                             </table>
                             <textarea name="novost">'.$rezultat['tekst'].'</textarea>';
                              print ' <input class="buttonNovosti" name="btnSubmit" onclick="dodajNovost(null)" type="button" value="Objavi">';
-                           
+                        
                             print ' </div>';
                         }
                     ?>

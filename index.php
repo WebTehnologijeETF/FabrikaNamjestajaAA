@@ -44,6 +44,8 @@
         <script src="validacionaSkripta.js"></script>
         <script src="ucitavanjeProizvoda.js"></script>
         <script src="skripte/novost.js"></script>
+        <script src="skripte/vijest.js"></script>
+        <script src="skripte/komentar.js"></script>
     </head>
     <body>
         <div id="okvir">
